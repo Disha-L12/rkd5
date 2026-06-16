@@ -29,7 +29,7 @@ post{
 success{
 echo 's'
 }
-}
+
 failure{
 echo 'f'}
 }
