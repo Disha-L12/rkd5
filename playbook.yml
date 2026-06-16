@@ -1,0 +1,14 @@
+- name: deploy WAR to TOMCAT
+  hosts: web
+  become: yes
+  
+  tasks:
+    - name: Copy war to tomcat
+      copy:
+        src: /var/snap/jenkins/5013/workspace/rkd5CICD/target/rkd5.war
+        dest: /opt/tomcat/webapps/rkd5.war
+        remote_src: no
+    - name: Restart Tomcat
+      systemd:
+        name: tomcat
+        state: restarted
