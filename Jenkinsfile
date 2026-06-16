@@ -1,6 +1,6 @@
 pipeline{
 agent any
-toots{
+tools{
 maven 'Maven'
 }
 stages{
